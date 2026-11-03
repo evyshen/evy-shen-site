@@ -163,8 +163,8 @@ header {
 .detail p { margin: 0; }
 .detail ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
 .detail li::marker { color: var(--accent); }
-.stack { display: flex; flex-wrap: wrap; gap: 6px; }
-.stack span { font-family: var(--mono); font-size: .7rem; border: 1px solid var(--rule); border-radius: 999px; padding: 1px 9px; }
+.tools { margin: 0; font-size: .9rem; color: var(--muted); }
+.tools-label { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; margin-right: 10px; }
 
 /* ---------- About ---------- */
 .about { border-top: 1px solid var(--rule); padding-block: 64px; scroll-margin-top: 70px; }
@@ -413,7 +413,7 @@ footer { border-top: 1px solid var(--rule); }
                 <li>Wrote the content strategy memo the org adopted, defining the metrics used to decide what gets written, consolidated or retired.</li>
                 <li>Designed and shipped an internal explorer for low-traffic patterns. It became a human-vs-agent heatmap now used in monthly reporting.</li>
               </ul>
-              <div class="stack"><span>Jupyter notebook</span><span>Python</span><span>Claude Code</span></div>
+              <p class="tools"><span class="tools-label">Tools</span>Jupyter notebook · Python · Claude Code</p>
             </div>
           </details></li>
           <li><details>
@@ -425,7 +425,7 @@ footer { border-top: 1px solid var(--rule); }
                 <li>Built product analytics from zero as the first data hire: instrumentation, schema design, data-quality checks and Metabase dashboards.</li>
                 <li>Designed paywall flows and wrote the first agent evaluation plan and error taxonomy from chat logs.</li>
               </ul>
-              <div class="stack"><span>UX audits</span><span>Figma</span><span>Segment</span><span>Metabase</span><span>SQL</span></div>
+              <p class="tools"><span class="tools-label">Tools</span>UX audits · Figma · Segment · Metabase · SQL</p>
             </div>
           </details></li>
           <li><details>
@@ -442,18 +442,18 @@ footer { border-top: 1px solid var(--rule); }
       </div>
 
       <div>
-        <p class="index-label">Shipped</p>
+        <p class="index-label">Projects</p>
         <ul class="index">
           <!-- COPY ONE <li> TO ADD A PROJECT. Put the year in the empty "yr" span. -->
           <li><details>
-            <summary class="row"><span class="nm">Brewlette<span class="badge">Launched in-store</span></span><span class="kind">iOS app</span><span class="yr"></span></summary>
+            <summary class="row"><span class="nm">Brewlette<span class="badge">On the App Store</span></span><span class="kind">iOS app</span><span class="yr"></span></summary>
             <div class="detail">
               <dl class="ship">
                 <dt>Problem</dt><dd>Waiting in line at a café is dead time.</dd>
-                <dt>Shipped</dt><dd class="shipped">A social game to play in line, launched live in a café.</dd>
+                <dt>Shipped</dt><dd class="shipped">A social game to play in line, released on the App Store and launched live in a café.</dd>
                 <dt>Result</dt><dd>Tested in-store with 50+ users, against goals set with the café's operators.</dd>
               </dl>
-              <div class="stack"><span>Swift</span><span>Supabase</span><span>Firebase Analytics</span></div>
+              <p class="tools"><span class="tools-label">Tools</span>Swift · Supabase · Firebase Analytics</p>
             </div>
           </details></li>
           <li><details>
@@ -461,10 +461,10 @@ footer { border-top: 1px solid var(--rule); }
             <div class="detail">
               <dl class="ship">
                 <dt>Problem</dt><dd>Staying close in a long-distance relationship. 20+ interviews with people aged 14 to 60 showed where it breaks down.</dd>
-                <dt>Shipped</dt><dd class="shipped">A cross-platform app, revised after a usability test at every iteration.</dd>
+                <dt>Built</dt><dd class="shipped">A cross-platform app, revised after a usability test at every iteration.</dd>
                 <dt>Result</dt><dd>Best Concept out of 40+ teams.</dd>
               </dl>
-              <div class="stack"><span>React Native</span><span>Supabase</span><span>Figma</span></div>
+              <p class="tools"><span class="tools-label">Tools</span>React Native · Supabase · Figma</p>
             </div>
           </details></li>
           <li><details>
@@ -472,10 +472,10 @@ footer { border-top: 1px solid var(--rule); }
             <div class="detail">
               <dl class="ship">
                 <dt>Problem</dt><dd>Translating ASL video into English text.</dd>
-                <dt>Shipped</dt><dd class="shipped">A deep-learning model using multimodal fusion and temporal attention.</dd>
+                <dt>Built</dt><dd class="shipped">A deep-learning model using multimodal fusion and temporal attention.</dd>
                 <dt>Result</dt><dd>18% higher BLEU score.</dd>
               </dl>
-              <div class="stack"><span>PyTorch</span><span>DINOv2</span><span>LSTM</span><span>BART</span></div>
+              <p class="tools"><span class="tools-label">Tools</span>PyTorch · DINOv2 · LSTM · BART</p>
             </div>
           </details></li>
         </ul>
