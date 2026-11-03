@@ -128,8 +128,8 @@ header {
 
 /* ---------- Intro + index ---------- */
 .intro { grid-area: intro; display: flex; flex-direction: column; gap: 28px; min-width: 0; max-width: 720px; }
-.lede { margin: 0; font-family: var(--serif); font-size: 1.45rem; line-height: 1.45; letter-spacing: -.005em; text-wrap: pretty; }
-.lede-sub { margin: -12px 0 0; max-width: 60ch; font-size: 1.05rem; line-height: 1.6; color: var(--muted); }
+.lede { display: flex; flex-direction: column; gap: 14px; max-width: 62ch; }
+.lede p { margin: 0; font-size: 1.1rem; line-height: 1.65; text-wrap: pretty; }
 .more {
   color: var(--accent); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px;
   font-size: 1.15rem; display: inline-flex; gap: 8px; align-items: center; width: fit-content;
@@ -361,13 +361,11 @@ footer { border-top: 1px solid var(--rule); }
     </div>
 
     <div class="intro">
-      <p class="lede">
-        I care about thinking deeply about problems, understanding the levers that move them, mapping out the future, and building durable systems that move us one step forward.
-      </p>
-      <p class="lede-sub">
-        I'm finishing an M.S. in Computer Science (AI) and a B.S. in Symbolic Systems (HCI) at Stanford.
-        Most recently at MongoDB, agent traffic broke the docs team's main performance metric, so I rebuilt a measurement system for prioritization.
-      </p>
+      <div class="lede">
+        <p>I care about thinking deeply about problems, understanding the levers that move them, and building durable systems that take us one step forward.</p>
+        <p>At WindBorne, I redesigned the operations tools behind 100+ monthly weather balloon launches, cutting procedural errors by 40%. At Ohara, I set up analytics from scratch and traced an 85% sign-up drop to its real cause. At MongoDB, I built tools to separate human from AI-agent traffic in the docs, which redefined how my team measures performance.</p>
+        <p>I'm finishing an M.S. in Computer Science (AI) at Stanford, after a B.S. in Symbolic Systems (HCI).</p>
+      </div>
       <a class="more" href="#about">About me <span aria-hidden="true">→</span></a>
 
       <div>
