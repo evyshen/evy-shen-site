@@ -343,6 +343,18 @@ footer { border-top: 1px solid var(--rule); }
 .sound-btn[aria-pressed="true"] .waves { display: inline; }
 .sound-btn[aria-pressed="true"] .mute { display: none; }
 
+
+/* Main navigation and links to the inner pages */
+.bar { flex-wrap: wrap; row-gap: 8px; }
+.nav { display: flex; align-items: center; gap: 22px; margin-left: auto; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--accent); }
+@media (max-width: 600px) { .nav { order: 3; width: 100%; margin-left: 0; gap: 20px; } }
+.cs-link, .all-link { display: inline-flex; gap: 8px; align-items: center; width: fit-content; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.cs-link span, .all-link span { transition: transform .2s; }
+.cs-link:hover span, .all-link:hover span { transform: translateX(4px); }
+.all-link { margin-top: 12px; font-size: .95rem; }
+
 @media (prefers-reduced-motion: reduce) {
   .scene .drift, .scene .sway, .scene .crown, .scene .grass, .scene .breathe, .scene .glow, .scene .legs { animation: none !important; }
 }
@@ -359,8 +371,12 @@ footer { border-top: 1px solid var(--rule); }
       <a href="#top">Evy Shen</a>
       <span class="tagline">Stanford CS + Symbolic Systems / Writer and Builder</span>
     </div>
-    <div class="right">
+    <nav class="nav" aria-label="Main">
+      <a href="projects.html">Projects</a>
+      <a href="writing.html">Writing</a>
       <a href="#about">About</a>
+    </nav>
+    <div class="right">
       <button class="sound-btn" id="sound-btn" type="button" aria-pressed="false" aria-label="Play trickling water sound" title="Play trickling water sound">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor" stroke="none"/><g class="waves"><path d="M15.5 9.2a4 4 0 0 1 0 5.6"/><path d="M18.2 6.6a7.6 7.6 0 0 1 0 10.8"/></g><g class="mute"><path d="M16 9.5l5 5M21 9.5l-5 5"/></g></svg>
       </button>
@@ -416,9 +432,9 @@ footer { border-top: 1px solid var(--rule); }
             <div class="detail">
               <div class="tags"><span>Strategy</span><span>Measurement</span></div>
               <ul>
-                <li>Rebuilt docs measurement after agent traffic broke pageviews as the team's north star. Split human and agent reading across 26K pages and 2M+ monthly pageviews.</li>
-                <li>Wrote the content strategy memo the org adopted, defining the metrics used to decide what gets written, consolidated or retired.</li>
-                <li>Designed and shipped an internal explorer for low-traffic patterns. It became a human-vs-agent heatmap now used in monthly reporting.</li>
+                <li>Took on a backlogged dashboard project for the information architects after agent traffic made pageviews, the team's main metric, unreliable.</li>
+                <li>Built a tool combining agent and human traffic across 26K pages and 2M+ monthly pageviews, with quick breakdowns by docs area and clear aggregate metrics. The team kept it as a standing reporting surface.</li>
+                <li>Its findings caught director-level attention and led to cross-functional strategy on the future of docs. Wrote the content strategy memo the org adopted, defining the metrics used to decide what gets written, consolidated or retired.</li>
               </ul>
               <p class="tools"><span class="tools-label">Tools</span>Jupyter notebook · Python · Claude Code</p>
             </div>
@@ -461,6 +477,7 @@ footer { border-top: 1px solid var(--rule); }
                 <dt>Result</dt><dd>Tested in-store with 50+ users, against goals set with the café's operators.</dd>
               </dl>
               <p class="tools"><span class="tools-label">Tools</span>Swift · Supabase · Firebase Analytics</p>
+              <a class="cs-link" href="project-brewlette.html">Read the case study <span aria-hidden="true">→</span></a>
             </div>
           </details></li>
           <li><details>
@@ -472,6 +489,7 @@ footer { border-top: 1px solid var(--rule); }
                 <dt>Result</dt><dd>Best Concept out of 40+ teams.</dd>
               </dl>
               <p class="tools"><span class="tools-label">Tools</span>React Native · Supabase · Figma</p>
+              <a class="cs-link" href="project-bottle.html">Read the case study <span aria-hidden="true">→</span></a>
             </div>
           </details></li>
           <li><details>
@@ -483,9 +501,11 @@ footer { border-top: 1px solid var(--rule); }
                 <dt>Result</dt><dd>18% higher BLEU score.</dd>
               </dl>
               <p class="tools"><span class="tools-label">Tools</span>PyTorch · DINOv2 · LSTM · BART</p>
+              <a class="cs-link" href="project-asl.html">Read the case study <span aria-hidden="true">→</span></a>
             </div>
           </details></li>
         </ul>
+        <a class="all-link" href="projects.html">All projects <span aria-hidden="true">→</span></a>
       </div>
 
       <div>
@@ -517,6 +537,7 @@ footer { border-top: 1px solid var(--rule); }
             </div>
           </details></li>
         </ul>
+        <a class="all-link" href="writing.html">All writing <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
