@@ -260,7 +260,7 @@ footer { border-top: 1px solid var(--rule); }
 /* Light that follows the cursor */
 .scene-light {
   position: absolute; inset: 0; z-index: 3; pointer-events: none;
-  background: radial-gradient(circle 84px at var(--mx, 60%) var(--my, 40%), rgb(255 240 205 / .6), rgb(255 240 205 / .14) 45%, transparent 100%);
+  background: radial-gradient(circle 168px at var(--mx, 60%) var(--my, 40%), rgb(255 240 205 / .6), rgb(255 240 205 / .14) 45%, transparent 100%);
   mix-blend-mode: soft-light; opacity: 0; transition: opacity .6s ease;
 }
 .scene:hover .scene-light, .scene.is-lit .scene-light { opacity: 1; }
@@ -577,7 +577,7 @@ footer { border-top: 1px solid var(--rule); }
     var cv = scene.querySelector('.scene-pixels'), img = scene.querySelector('.scene-src');
     if (!cv || !img) return;
     var c = cv.getContext('2d'), m = document.createElement('canvas'), mc = m.getContext('2d');
-    var R = 41, d = 1, running = false, p = { x: 0, y: 0, on: false };   // R: reveal radius in CSS pixels
+    var R = 82, d = 1, running = false, p = { x: 0, y: 0, on: false };   // R: reveal radius in CSS pixels
     function size() {
       var r = scene.getBoundingClientRect();
       d = Math.min(window.devicePixelRatio || 1, 2);
