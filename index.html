@@ -180,6 +180,9 @@ header {
 .seg button:hover { color: var(--fg); }
 .seg button[aria-selected="true"] { background: var(--fg); color: var(--bg); }
 .about-version { display: flex; flex-direction: column; gap: 18px; }
+.about-version.is-in { animation: about-in .45s ease both; }
+@keyframes about-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.seg-note { margin: -10px 0 0 !important; font-family: var(--mono); font-size: .7rem !important; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .values { margin: 0; padding-left: 1.5em; display: flex; flex-direction: column; gap: 20px; }
 .values li { padding-left: .2em; }
 .values li::marker { font-family: var(--mono); font-size: .85rem; color: var(--accent); }
@@ -502,8 +505,9 @@ footer { border-top: 1px solid var(--rule); }
           <button type="button" role="tab" id="tab-short" aria-controls="about-short" aria-selected="true">Short</button>
           <button type="button" role="tab" id="tab-long" aria-controls="about-long" aria-selected="false">Long</button>
         </div>
+        <p class="seg-note" id="seg-note" aria-live="polite">Short version · about 300 words</p>
         <div class="about-version" id="about-short" role="tabpanel" aria-labelledby="tab-short">
-          <p>I came to Stanford as a writer, but I would argue that it is very similar to a builder. A writer seeks to understand, conducts research &amp; analysis, strategizes for desired impact, prototypes different worlds to own a vision at multiple granularities (from word-level editing to idealogical exploration), ships, and learns from feedback.</p>
+          <p>I came to Stanford as a writer, but I would argue that it is very similar to a builder. A writer seeks to understand, conducts research &amp; analysis, strategizes for desired impact, prototypes different worlds to own a vision at multiple granularities (from word-level editing to ideological exploration), ships, and learns from feedback.</p>
           <p>At Stanford, I now study Computer Science (AI), but before that, I studied Symbolic Systems in my undergrad, where I was trained to think about cognition from different levels: philosophy, psychology, linguistics and computer science. I was drawn to how technology augments our cognition. I developed mobile apps to augment our social interactions and improve existing research techniques for robot data curation and vision models.</p>
           <p>Throughout it all, I’ve gone through many challenges connecting my learning into a coherent model of the world while tying that to doing work that I find most meaningful.</p>
           <p>There are three things that I value:</p>
@@ -515,7 +519,7 @@ footer { border-top: 1px solid var(--rule); }
           <p>I’m always looking to learn!</p>
         </div>
         <div class="about-version" id="about-long" role="tabpanel" aria-labelledby="tab-long" hidden>
-          <p>I came to Stanford as a writer, but I would argue that it is very similar to a builder. A writer seeks to understand, conducts research &amp; analysis, strategizes for desired impact, prototypes different worlds to own a vision at multiple granularities (from word-level editing to idealogical exploration), and ships. As a creative writer, I thought often about what the world should look like to be more inclusive.</p>
+          <p>I came to Stanford as a writer, but I would argue that it is very similar to a builder. A writer seeks to understand, conducts research &amp; analysis, strategizes for desired impact, prototypes different worlds to own a vision at multiple granularities (from word-level editing to ideological exploration), and ships. As a creative writer, I thought often about what the world should look like to be more inclusive.</p>
           <p>At Stanford, I studied Symbolic Systems, which introduced me to different lenses for understanding human consciousness and machine intelligence, including philosophy, psychology, linguistics and computer science. I worked on projects that used technology to augment our social interactions and improve existing research techniques. I am now studying Computer Science to build strong engineering fundamentals in developing AI.</p>
           <p>Throughout it all (internships, clubs and classes), I’ve gone through many challenges connecting my learning into a coherent model of the world while tying that to doing work that I find most meaningful.</p>
           <p>There are three things that I value:</p>
@@ -686,8 +690,12 @@ footer { border-top: 1px solid var(--rule); }
         tabs.forEach(function (o) {
           var on = o === t;
           o.setAttribute('aria-selected', String(on));
-          document.getElementById(o.getAttribute('aria-controls')).hidden = !on;
+          var panel = document.getElementById(o.getAttribute('aria-controls'));
+          panel.hidden = !on;
+          if (on) { panel.classList.remove('is-in'); void panel.offsetWidth; panel.classList.add('is-in'); }
         });
+        var note = document.getElementById('seg-note');
+        if (note) note.textContent = t.id === 'tab-long' ? 'Long version · about 480 words' : 'Short version · about 300 words';
       });
     });
   })();
